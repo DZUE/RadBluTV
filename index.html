@@ -1,13 +1,41 @@
 <!DOCTYPE html>
 <html>
-<body style="background:#000; color:#fff; text-align:center; padding-top:100px;">
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+    }
+    button {
+      font-size: 28px;
+      padding: 20px 40px;
+      background-color: #007bc8;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
 
-  <embed src="https://file-examples.com/storage/fea1b99f906a9297992df20/2017/11/file_example_MP3_5MG.mp3" 
-         type="audio/mpeg" 
-         autostart="true" 
-         loop="false" 
-         width="300" 
-         height="80">
+  <button onclick="sound.play()">CLICK TO PLAY AUDIO</button>
+
+  <script>
+    var sound = new Howl({
+      src: ['https://files.catbox.moe/txcyrn.mp3'],
+      html5: true
+    });
+  </script>
 
 </body>
 </html>
